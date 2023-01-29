@@ -54,9 +54,9 @@ if(isset($_POST['update']))
 				<?php	
 				$aid=$_SESSION['id'];
 				$udate = date('d-m-Y h:i:s', time());
-				$ret="select * from userregistration where id=?";
+				$ret="select * from userregistration where regno=?";
 				$stmt= $mysqli->prepare($ret) ;
-				$stmt->bind_param('i',$aid);
+				$stmt->bind_param('s',$aid);
 	 $stmt->execute() ;//ok
 	 $res=$stmt->get_result();
 	 //$cnt=1;
